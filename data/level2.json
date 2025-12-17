@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Where ___ you from?", "choices": ["is", "are", "am", "not"], "answer": "are" },
+  { "id": 2, "question": "I usually ___ breakfast at 7 a.m.", "choices": ["have", "has", "want", "will"], "answer": "have" },
+  { "id": 3, "question": "They ___ to school yesterday.", "choices": ["go", "went", "goes", "gone"], "answer": "went" },
+  { "id": 4, "question": "Opposite of happy", "choices": ["Sad", "Smile", "Gloomy", "Disappointed"], "answer": "Sad" },
+  { "id": 5, "question": "Which sentence is correct?", "choices": ["I has a car", "I have a car", "I had a car", "I haves a car"], "answer": "I have a car" },
+  { "id": 6, "question": "What time is it? 07:30", "choices": ["Half past eight", "Eight past half", "Half past seven", "seven past half"], "answer": "Half past eight" },
+  { "id": 7, "question": "What is the past tense of eat?", "choices": ["Eat", "Ate", "Aten", "Eaten"], "answer": "Ate" },
+  { "id": 8, "question": "Which word is an adjective?", "choices": ["Fast", "Run", "Dog", "Stone"], "answer": "Fast" },
+  { "id": 9, "question": "There ___ three books on the table.", "choices": ["is", "are", "am", "not"], "answer": "are" },
+  { "id": 10, "question": "Which is a question word?", "choices": ["Who", "Apple", "Chair", "cat"], "answer": "Who" },
+  { "id": 11, "question": "My father ___ football every Sunday.", "choices": ["play", "plays", "player", "playes"], "answer": "plays" },
+  { "id": 12, "question": "What is 12 divided by 4?", "choices": ["2", "3", "4", "5"], "answer": "3" },
+  { "id": 13, "question": "Which is correct?", "choices": ["She can sings", "She can sing", "She can sungs", "She can sung"], "answer": "She can sing" },
+  { "id": 14, "question": "What’s the opposite of early?", "choices": ["Late", "Soon", "Fast", "Slow"], "answer": "Late" },
+  { "id": 15, "question": "I ___ TV last night.", "choices": ["watch", "watched", "watcher", "will watch"], "answer": "watched" },
+  { "id": 16, "question": "How many days are in a year?", "choices": ["11", "12", "364", "365"], "answer": "365" },
+  { "id": 17, "question": "The past tense of go is", "choices": ["Go", "Went", "Gone", "Done"], "answer": "Went" },
+  { "id": 18, "question": "Which one is a preposition?", "choices": ["Under", "apple", "Dog", "Run"], "answer": "Under" },
+  { "id": 19, "question": "There ___ some milk in the fridge.", "choices": ["is", "are", "am", "not"], "answer": "is" },
+  { "id": 20, "question": "What does hungry mean?", "choices": ["Want to sleep", "Want to eat", "want to go", "want to sit"], "answer": "Want to eat" }
+]
