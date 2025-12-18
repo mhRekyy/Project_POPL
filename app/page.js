@@ -76,9 +76,11 @@ export default function Home() {
           </h1>
 
           {/* QUOTE ICON - RIGHT UNDER H1 */}
-          <img
+          <Image
             src="/tanda petik.png"  
             alt=""
+            width={40}
+            height={40}
             className="w-10 h-10 absolute -bottom-1 -right-2 opacity-90 rotate-[150deg]"
           />
         </div>
@@ -99,9 +101,11 @@ export default function Home() {
             <div className="max-w-[320px] relative">
 
               {/* QUOTE ICON */}
-              <img 
+              <Image 
                 src="/tanda petik.png" 
                 alt=""
+                width={40}
+                height={40}
                 className="w-10 h-10 absolute -top-5 -left-8"
               />
 
@@ -155,12 +159,14 @@ export default function Home() {
               "
             >
               <span className="text-[15px] text-[#6a6a6a] italic opacity-90 -mb-[25px] -ml-4">
-                &ldquo;Ayok login…&rdquo;
+                &ldquo;Ayok login&hellip;&rdquo;
               </span>
 
-              <img
+              <Image
                 src="/arrow.png"
                 alt="arrow"
+                width={200}
+                height={100}
                 className="
                   w-[200px]
                   h-auto
