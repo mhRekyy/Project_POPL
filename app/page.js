@@ -39,8 +39,8 @@ export default function Home() {
         <div
           className="
             absolute
-            left-30    
-            top-30
+            left-[30px]    
+            top-[30px]
             w-[70px]
             h-[70px]
             rounded-full
@@ -154,7 +154,7 @@ export default function Home() {
                 z-40
               "
             >
-              <span className="text-[15px] text-[#6a6a6a] italic opacity-90 -mb-25 -ml-4">
+              <span className="text-[15px] text-[#6a6a6a] italic opacity-90 -mb-[25px] -ml-4">
                 &ldquo;Ayok login…&rdquo;
               </span>
 
@@ -235,7 +235,7 @@ export default function Home() {
 
 
           {/* RIGHT RATING */}
-          <div className="hidden md:flex w-1/3 justify-end pr-26 -mt-40">
+          <div className="hidden md:flex w-1/3 justify-end pr-[26px] -mt-40">
             <div className="text-right">
               <div className="flex justify-end -mb-4">
                 {[...Array(5)].map((_, i) => (
