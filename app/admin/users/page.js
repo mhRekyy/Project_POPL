@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getUsers } from "./actions";
 
 export default async function UsersPage({ searchParams }) {
