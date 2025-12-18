@@ -106,9 +106,9 @@ export default function Home() {
               />
 
               <p className="text-[16px] font-medium text-[#222] leading-[1.25] mt-4">
-                "Asah kemampuan English-mu dengan kuis interaktif yang bikin nagih.
+                 &quot;Asah kemampuan English-mu dengan kuis interaktif yang bikin nagih.
                 Siap-siap, skill kamu bakal naik level! baru 1% orang yang bisa
-                menyelesaikannya loh"
+                 menyelesaikannya loh&quot;
               </p>
             </div>
           </div>
