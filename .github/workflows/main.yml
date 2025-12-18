@@ -34,3 +34,7 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          # Tambahkan env dummy agar build tidak gagal karena koneksi DB di GitHub
+          DATABASE_URL: "postgresql://johndoe:randompassword@localhost:5432/mydb"
+          NEXTAUTH_SECRET: "random_secret_for_build_only"
