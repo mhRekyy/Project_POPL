@@ -155,7 +155,7 @@ export default function Home() {
               "
             >
               <span className="text-[15px] text-[#6a6a6a] italic opacity-90 -mb-25 -ml-4">
-                “Ayok login…”
+                &ldquo;Ayok login…&rdquo;
               </span>
 
               <img
