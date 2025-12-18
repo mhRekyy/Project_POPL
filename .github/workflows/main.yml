@@ -18,12 +18,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm' # Menambahkan cache agar install lebih cepat
 
       - name: Install dependencies
         run: npm install
 
+      # PENTING: Generate prisma sebelum lint/build agar tidak error tipe data
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
       - name: Run Linter
         run: npm run lint
+        # Jika lint sering mengganggu deploy, kamu bisa gunakan: 
+        # run: npm run lint || true 
 
       - name: Build project
         run: npm run build
