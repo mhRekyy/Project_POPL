@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "prisma generate && next build",
-  "start": "next start",
-  "lint": "next lint" 
-},
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "@prisma/client": "^5.15.1",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
+    "@upstash/redis": "^1.35.8",
     "bcryptjs": "^3.0.3",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { redisLogger } from "@/lib/redisLogger"; // Import logger redis
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,7 @@ export async function POST(request) {
     const { level, score, passed, userId } = await request.json();
 
     if (!userId) {
+      await redisLogger.error("Quiz submission failed: Missing userId");
       return NextResponse.json(
         { error: "userId is required" },
         { status: 400 }
@@ -26,8 +28,22 @@ export async function POST(request) {
       }
     });
 
+    // --- LOGGING INFO ---
+    // Mencatat bahwa user berhasil menyelesaikan kuis
+    await redisLogger.info(`User finished quiz level ${level}`, {
+      userId,
+      score,
+      status: passed ? "PASSED" : "FAILED"
+    });
+
     return NextResponse.json(newResult, { status: 201 });
   } catch (error) {
+    // --- LOGGING ERROR ---
+    await redisLogger.error("Error saving quiz result", {
+      message: error.message,
+      userId: userId || "unknown"
+    });
+
     console.error("Error saving quiz:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
@@ -50,8 +66,18 @@ export async function GET(req) {
       orderBy: { createdAt: "desc" },
     });
 
+    // --- LOGGING INFO ---
+    // Mencatat akses history (opsional, untuk melihat keaktifan user)
+    await redisLogger.info("User fetched quiz history", { userId });
+
     return NextResponse.json({ ok: true, data: results });
   } catch (error) {
+    // --- LOGGING ERROR ---
+    await redisLogger.error("Error fetching quiz results history", {
+      message: error.message,
+      userId: userId || "unknown"
+    });
+
     console.error("Error fetching quiz results:", error);
     return NextResponse.json({ ok: false, error: error.message });
   }

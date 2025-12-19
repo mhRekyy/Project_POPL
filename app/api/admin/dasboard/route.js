@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { redisLogger } from "@/lib/redisLogger"; // Import logger redis
 
 export async function GET() {
   try {
@@ -29,6 +30,14 @@ export async function GET() {
       }
     });
 
+    // --- LOGGING INFO ---
+    // Mencatat aktivitas sukses akses dashboard
+    await redisLogger.info("Admin Dashboard data fetched successfully", {
+      totalUsers,
+      totalAttempt,
+      timestamp: new Date().toISOString()
+    });
+
     return Response.json({
       totalUsers,
       totalQuiz: totalQuiz.length,
@@ -38,6 +47,13 @@ export async function GET() {
     });
 
   } catch (err) {
+    // --- LOGGING ERROR ---
+    // Mencatat detail error ke Redis agar bisa dipantau
+    await redisLogger.error("Failed to fetch Admin Dashboard data", {
+      errorMessage: err.message,
+      stack: err.stack
+    });
+
     console.error("Dashboard error:", err);
     return Response.json({ error: "Server error" }, { status: 500 });
   }

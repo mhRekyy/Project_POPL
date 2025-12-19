@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { redisLogger } from "@/lib/redisLogger"; // Import logger redis
 
 export async function GET() {
   try {
@@ -28,9 +29,23 @@ export async function GET() {
       })
     );
 
+    // --- LOGGING INFO ---
+    // Mencatat bahwa leaderboard berhasil ditarik, membantu melihat aktivitas populer
+    await redisLogger.info("Leaderboard data retrieved", {
+      totalParticipants: leaderboardWithUser.length,
+      timestamp: new Date().toISOString()
+    });
+
     return NextResponse.json(leaderboardWithUser);
   } catch (error) {
+    // --- LOGGING ERROR ---
+    // Mencatat jika ada kegagalan query atau mapping data
+    await redisLogger.error("Error fetching leaderboard", {
+      message: error.message,
+      stack: error.stack
+    });
+
     console.log(error);
-    return NextResponse.json({ error: "Something went wrong" });
+    return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
   }
 }
