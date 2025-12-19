@@ -10,6 +10,7 @@ import {
   FaClipboardList,
   FaMedal,
   FaSignOutAlt,
+  FaHistory, // Tambahkan icon untuk Logs
 } from "react-icons/fa";
 
 export default function AdminSidebar() {
@@ -20,6 +21,7 @@ export default function AdminSidebar() {
     { name: "Users", href: "/admin/users", icon: <FaUsers /> },
     { name: "Quiz", href: "/admin/quiz", icon: <FaClipboardList /> },
     { name: "Leaderboard", href: "/admin/leaderboard", icon: <FaMedal /> },
+    { name: "Logs", href: "/admin/logs", icon: <FaHistory /> }, // Tambahkan menu Logs di sini
   ];
 
   return (
@@ -28,7 +30,6 @@ export default function AdminSidebar() {
       {/* Logo */}
       <div>
         <div className="flex items-center gap-3 mb-10">
-
           {/* bg-logo */}
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md shrink-0">
             <Image
